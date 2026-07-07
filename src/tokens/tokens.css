@@ -1,19 +1,20 @@
 /* tokens.css — tokens sémantiques de la charte FDC.
-   Palette dérivée du thème officiel chasseurdefrance.com (vert nature + terres). */
+   Palette dérivée du thème officiel chasseurdefrance.com (vert nature + terres).
+   Thème CLAIR par défaut ; thème SOMBRE via [data-theme="dark"] sur <html>. */
 
 :root {
   /* Marque */
-  --fdc-color-primary: #66a361;        /* vert nature (dominante) */
+  --fdc-color-primary: #66a361;
   --fdc-color-primary-hover: #5a9755;
-  --fdc-color-primary-soft: #eaf2e9;   /* fond tinté primaire */
-  --fdc-color-accent: #afcf1a;         /* lime / olive */
-  --fdc-color-earth: #b78a6b;          /* tan chaud */
+  --fdc-color-primary-soft: #eaf2e9;
+  --fdc-color-accent: #afcf1a;
+  --fdc-color-earth: #b78a6b;
 
   /* Texte & surfaces */
-  --fdc-color-text: #302921;           /* brun foncé */
+  --fdc-color-text: #302921;
   --fdc-color-text-muted: #61615a;
   --fdc-color-surface: #ffffff;
-  --fdc-color-surface-alt: #f5f5f1;    /* off-white */
+  --fdc-color-surface-alt: #f5f5f1;
   --fdc-color-border: #e7e7e7;
 
   /* États sémantiques */
@@ -30,4 +31,26 @@
   --fdc-color-on-primary: #ffffff;
   --fdc-color-on-accent: #302921;
   --fdc-color-on-danger: #ffffff;
+}
+
+/* Thème sombre — surfaces vert-forêt sombres, texte clair, marque éclaircie
+   pour le contraste. Ne redéfinit QUE ce qui change. */
+:root[data-theme='dark'] {
+  --fdc-color-primary: #7ec27a;
+  --fdc-color-primary-hover: #8fce8b;
+  --fdc-color-primary-soft: #23331f;
+  --fdc-color-earth: #c79c7d;
+
+  --fdc-color-text: #eaf0e8;
+  --fdc-color-text-muted: #9fb0a2;
+  --fdc-color-surface: #16211a;
+  --fdc-color-surface-alt: #101812;
+  --fdc-color-border: #2c3a30;
+
+  --fdc-color-danger-soft: #3a1f1f;
+  --fdc-color-success-soft: #1f2e1c;
+  --fdc-color-warn-soft: #33291a;
+  --fdc-color-info-soft: #1e2a30;
+
+  --fdc-color-on-primary: #10190f;
 }
