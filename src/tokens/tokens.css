@@ -38,19 +38,19 @@
 :root[data-theme='dark'] {
   --fdc-color-primary: #7ec27a;
   --fdc-color-primary-hover: #8fce8b;
-  --fdc-color-primary-soft: #23331f;
+  --fdc-color-primary-soft: #2e281f;
   --fdc-color-earth: #c79c7d;
 
-  --fdc-color-text: #eaf0e8;
-  --fdc-color-text-muted: #9fb0a2;
-  --fdc-color-surface: #16211a;
-  --fdc-color-surface-alt: #101812;
-  --fdc-color-border: #2c3a30;
+  --fdc-color-text: #efe9e2;
+  --fdc-color-text-muted: #b3a89b;
+  --fdc-color-surface: #2b241e; /* panneaux/header (légèrement relevé) */
+  --fdc-color-surface-alt: #211c17; /* fond de page (marron des slides) */
+  --fdc-color-border: #3a3129;
 
-  --fdc-color-danger-soft: #3a1f1f;
-  --fdc-color-success-soft: #1f2e1c;
-  --fdc-color-warn-soft: #33291a;
-  --fdc-color-info-soft: #1e2a30;
+  --fdc-color-danger-soft: #3a201d;
+  --fdc-color-success-soft: #26301f;
+  --fdc-color-warn-soft: #342a1b;
+  --fdc-color-info-soft: #232c31;
 
-  --fdc-color-on-primary: #10190f;
+  --fdc-color-on-primary: #1a140f;
 }

@@ -15,3 +15,4 @@ export { default as FdcTextSizeToggle } from './components/FdcTextSizeToggle/Fdc
 export { default as FdcLocaleSwitcher } from './components/FdcLocaleSwitcher/FdcLocaleSwitcher.vue'
 export { default as FdcCookieConsent } from './components/FdcCookieConsent/FdcCookieConsent.vue'
 export { default as FdcInstallBanner } from './components/FdcInstallBanner/FdcInstallBanner.vue'
+export { default as FdcOAuthButtons } from './components/FdcOAuthButtons/FdcOAuthButtons.vue'
