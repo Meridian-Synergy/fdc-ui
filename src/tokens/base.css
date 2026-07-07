@@ -1,14 +1,29 @@
-/* base.css — reset minimal + primitives. Complète tokens.css.
-   NB : chaque composant fournit ses propres fallbacks var(--token, valeur) ;
-   ce fichier ne fait que poser les primitives partagées. */
+/* base.css — reset minimal + primitives (typo, rayons, espacements).
+   Les tokens sémantiques de charte sont dans tokens.css.
+   NB : chaque composant fournit ses propres fallbacks var(--token, valeur). */
 
 :root {
-  --fdc-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Typographie */
+  --fdc-font-sans: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+
+  /* Rayons */
   --fdc-radius-sm: 4px;
   --fdc-radius-md: 8px;
+  --fdc-radius-lg: 14px;
+
+  /* Espacements */
+  --fdc-space-1: 0.25rem;
   --fdc-space-2: 0.5rem;
   --fdc-space-3: 0.75rem;
   --fdc-space-4: 1rem;
+  --fdc-space-5: 1.5rem;
+  --fdc-space-6: 2rem;
+
+  /* Rail de contenu (largeur max alignée) */
+  --fdc-rail-max: 1120px;
+
+  /* Ombres */
+  --fdc-shadow-card: 0 1px 2px rgba(48, 41, 33, 0.06), 0 4px 12px rgba(48, 41, 33, 0.05);
 }
 
 *,
