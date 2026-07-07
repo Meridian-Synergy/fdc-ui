@@ -134,13 +134,15 @@ function keyOf(row: Row, index: number): string | number {
 .fdc-datatable__td--right {
   text-align: right;
 }
+/* barre d'actions par ligne : le gap doit vivre sur le CONTENEUR flex pour
+   séparer réellement les cibles (bug 2026-07-07 : gap posé sur `> *` = sans
+   effet entre boutons). Alignées à droite, sur une seule ligne. */
 .fdc-datatable__actions {
-  white-space: nowrap;
-}
-/* la barre d'actions par ligne aligne ses cibles (≥44px via les boutons DS) */
-.fdc-datatable__actions :deep(> *) {
-  display: inline-flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: var(--fdc-space-2, 0.5rem);
+  white-space: nowrap;
 }
 .fdc-datatable__empty {
   margin: 0;
