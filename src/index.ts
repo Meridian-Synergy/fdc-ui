@@ -2,6 +2,7 @@
 // Consommé en dépendance git (github:Meridian-Synergy/fdc-ui), transpilé par le
 // consommateur (pas de build/publish npm).
 export { default as FdcButton } from './components/FdcButton/FdcButton.vue'
+export { default as FdcLogo } from './components/FdcLogo/FdcLogo.vue'
 export { default as FdcInput } from './components/FdcInput/FdcInput.vue'
 export { default as FdcField } from './components/FdcField/FdcField.vue'
 export { default as FdcCard } from './components/FdcCard/FdcCard.vue'
