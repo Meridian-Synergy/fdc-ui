@@ -16,3 +16,5 @@ export { default as FdcLocaleSwitcher } from './components/FdcLocaleSwitcher/Fdc
 export { default as FdcCookieConsent } from './components/FdcCookieConsent/FdcCookieConsent.vue'
 export { default as FdcInstallBanner } from './components/FdcInstallBanner/FdcInstallBanner.vue'
 export { default as FdcOAuthButtons } from './components/FdcOAuthButtons/FdcOAuthButtons.vue'
+export { default as FdcDataTable } from './components/FdcDataTable/FdcDataTable.vue'
+export type { FdcColumn } from './components/FdcDataTable/types'
