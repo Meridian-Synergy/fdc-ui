@@ -4,13 +4,13 @@ import FdcButton from './FdcButton.vue'
 const meta: Meta<typeof FdcButton> = {
   title: 'Composants/FdcButton',
   component: FdcButton,
-  args: { variant: 'primary', disabled: false },
+  args: { variant: 'primary', size: 'md', disabled: false, block: false },
   argTypes: {
-    variant: { control: 'select', options: ['primary', 'outline'] },
+    variant: { control: 'select', options: ['primary', 'outline', 'danger'] },
+    size: { control: 'select', options: ['md', 'sm'] },
   },
 }
 export default meta
-
 type Story = StoryObj<typeof FdcButton>
 
 export const Primary: Story = {
@@ -27,5 +27,14 @@ export const Outline: Story = {
     components: { FdcButton },
     setup: () => ({ args }),
     template: '<FdcButton v-bind="args">Annuler</FdcButton>',
+  }),
+}
+
+export const Danger: Story = {
+  args: { variant: 'danger' },
+  render: (args) => ({
+    components: { FdcButton },
+    setup: () => ({ args }),
+    template: '<FdcButton v-bind="args">Supprimer</FdcButton>',
   }),
 }

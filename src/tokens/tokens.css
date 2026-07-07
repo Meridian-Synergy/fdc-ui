@@ -1,19 +1,33 @@
-/* tokens.css — tokens sémantiques de la charte FDC (placeholder L0.0).
-   Charte définitive « façon chasseurdefrance.com » à poser en L0.2.
-   Palette provisoire : vert forêt / ocre. */
+/* tokens.css — tokens sémantiques de la charte FDC.
+   Palette dérivée du thème officiel chasseurdefrance.com (vert nature + terres). */
 
 :root {
-  /* couleurs de marque */
-  --fdc-color-primary: #2f5d3a;
-  --fdc-color-primary-hover: #274d31;
-  --fdc-color-accent: #b8860b;
+  /* Marque */
+  --fdc-color-primary: #66a361;        /* vert nature (dominante) */
+  --fdc-color-primary-hover: #5a9755;
+  --fdc-color-primary-soft: #eaf2e9;   /* fond tinté primaire */
+  --fdc-color-accent: #afcf1a;         /* lime / olive */
+  --fdc-color-earth: #b78a6b;          /* tan chaud */
 
-  /* surfaces & texte */
+  /* Texte & surfaces */
+  --fdc-color-text: #302921;           /* brun foncé */
+  --fdc-color-text-muted: #61615a;
   --fdc-color-surface: #ffffff;
-  --fdc-color-text: #1c2b20;
-  --fdc-color-text-muted: #5b6b60;
-  --fdc-color-border: #d8e0da;
+  --fdc-color-surface-alt: #f5f5f1;    /* off-white */
+  --fdc-color-border: #e7e7e7;
 
-  /* on-primary */
+  /* États sémantiques */
+  --fdc-color-danger: #eb3c3c;
+  --fdc-color-danger-soft: #fdeaea;
+  --fdc-color-success: #66a361;
+  --fdc-color-success-soft: #eaf2e9;
+  --fdc-color-warn: #d49c49;
+  --fdc-color-warn-soft: #fbf1e2;
+  --fdc-color-info: #5c7f96;
+  --fdc-color-info-soft: #eaf0f3;
+
+  /* on-* (texte sur fond coloré) */
   --fdc-color-on-primary: #ffffff;
+  --fdc-color-on-accent: #302921;
+  --fdc-color-on-danger: #ffffff;
 }
