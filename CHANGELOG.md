@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.1.0...v1.1.1) (2026-07-07)
+
+
+### Bug Fixes
+
+* **datatable:** put row-actions gap on the flex container ([#11](https://github.com/Meridian-Synergy/fdc-ui/issues/11)) ([e1831a1](https://github.com/Meridian-Synergy/fdc-ui/commit/e1831a17ae9b6d92ce3aa1379b982dd20d9638ff))
+
 ## [1.1.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.0.0...v1.1.0) (2026-07-07)
 
 
