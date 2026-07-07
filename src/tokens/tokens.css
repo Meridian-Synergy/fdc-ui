@@ -1,0 +1,19 @@
+/* tokens.css — tokens sémantiques de la charte FDC (placeholder L0.0).
+   Charte définitive « façon chasseurdefrance.com » à poser en L0.2.
+   Palette provisoire : vert forêt / ocre. */
+
+:root {
+  /* couleurs de marque */
+  --fdc-color-primary: #2f5d3a;
+  --fdc-color-primary-hover: #274d31;
+  --fdc-color-accent: #b8860b;
+
+  /* surfaces & texte */
+  --fdc-color-surface: #ffffff;
+  --fdc-color-text: #1c2b20;
+  --fdc-color-text-muted: #5b6b60;
+  --fdc-color-border: #d8e0da;
+
+  /* on-primary */
+  --fdc-color-on-primary: #ffffff;
+}

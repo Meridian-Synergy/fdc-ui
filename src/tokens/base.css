@@ -1,0 +1,18 @@
+/* base.css — reset minimal + primitives. Complète tokens.css.
+   NB : chaque composant fournit ses propres fallbacks var(--token, valeur) ;
+   ce fichier ne fait que poser les primitives partagées. */
+
+:root {
+  --fdc-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fdc-radius-sm: 4px;
+  --fdc-radius-md: 8px;
+  --fdc-space-2: 0.5rem;
+  --fdc-space-3: 0.75rem;
+  --fdc-space-4: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
