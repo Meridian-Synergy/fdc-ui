@@ -43,9 +43,9 @@
 
   --fdc-color-text: #efe9e2;
   --fdc-color-text-muted: #b3a89b;
-  --fdc-color-surface: #2b241e; /* panneaux/header (légèrement relevé) */
-  --fdc-color-surface-alt: #211c17; /* fond de page (marron des slides) */
-  --fdc-color-border: #3a3129;
+  --fdc-color-surface: #342c22; /* panneaux/cartes — relevés pour se détacher du fond */
+  --fdc-color-surface-alt: #1b1611; /* fond de page (marron sombre des slides) */
+  --fdc-color-border: #4a3f33; /* bordures plus lisibles → les cartes « posent » */
 
   --fdc-color-danger-soft: #3a201d;
   --fdc-color-success-soft: #26301f;
