@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.2.0...v1.3.0) (2026-07-09)
+
+
+### Features
+
+* **ui:** prop `flat` sur FdcDataTable ([#15](https://github.com/Meridian-Synergy/fdc-ui/issues/15)) ([e35f2eb](https://github.com/Meridian-Synergy/fdc-ui/commit/e35f2ebbd2f7649ac720011bb1ff346089f321e5))
+
 ## [1.2.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.1.1...v1.2.0) (2026-07-09)
 
 
