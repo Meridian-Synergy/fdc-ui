@@ -18,6 +18,7 @@ export { default as FdcInstallBanner } from './components/FdcInstallBanner/FdcIn
 export { default as FdcOAuthButtons } from './components/FdcOAuthButtons/FdcOAuthButtons.vue'
 export { default as FdcDataTable } from './components/FdcDataTable/FdcDataTable.vue'
 export type { FdcColumn } from './components/FdcDataTable/types'
+export { default as FdcConfirmButton } from './components/FdcConfirmButton/FdcConfirmButton.vue'
 export { default as FdcToast } from './components/FdcToast/FdcToast.vue'
 export { useToast } from './composables/useToast'
 export type { ToastTone, ToastItem, ToastOptions } from './composables/useToast'
