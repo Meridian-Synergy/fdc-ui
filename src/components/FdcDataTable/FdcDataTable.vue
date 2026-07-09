@@ -23,6 +23,9 @@ const props = withDefaults(
     /** légende du tableau (a11y) ; masquée visuellement mais lue par les AT. */
     caption?: string
     actionsLabel?: string
+    /** sans cadre propre (bordure + rayon) : à utiliser quand le tableau est
+        déjà posé dans une surface (FdcCard) pour éviter le double encadrement. */
+    flat?: boolean
   }>(),
   {
     rowKey: 'id',
@@ -31,6 +34,7 @@ const props = withDefaults(
     emptyLabel: 'Aucune donnée',
     caption: '',
     actionsLabel: 'Actions',
+    flat: false,
   },
 )
 
@@ -45,7 +49,7 @@ function keyOf(row: Row, index: number): string | number {
 
   <p v-else-if="rows.length === 0" class="fdc-datatable__empty">{{ emptyLabel }}</p>
 
-  <div v-else class="fdc-datatable__scroll">
+  <div v-else class="fdc-datatable__scroll" :class="{ 'fdc-datatable__scroll--flat': flat }">
     <table class="fdc-datatable">
       <caption v-if="caption" class="fdc-datatable__caption">{{ caption }}</caption>
       <thead>
@@ -89,6 +93,11 @@ function keyOf(row: Row, index: number): string | number {
   overflow-x: auto;
   border: 1px solid var(--fdc-color-border, #e7e7e7);
   border-radius: var(--fdc-radius-lg, 14px);
+}
+/* Posé dans une surface (FdcCard) : pas de cadre propre → évite le double bord. */
+.fdc-datatable__scroll--flat {
+  border: 0;
+  border-radius: 0;
 }
 .fdc-datatable {
   width: 100%;
