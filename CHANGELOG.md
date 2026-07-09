@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.1.1...v1.2.0) (2026-07-09)
+
+
+### Features
+
+* **ui:** FdcToast + contraste sombre des surfaces ([#13](https://github.com/Meridian-Synergy/fdc-ui/issues/13)) ([37aa2ac](https://github.com/Meridian-Synergy/fdc-ui/commit/37aa2acead7967947e036a23878d757d700c8ee2))
+
 ## [1.1.1](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.1.0...v1.1.1) (2026-07-07)
 
 
