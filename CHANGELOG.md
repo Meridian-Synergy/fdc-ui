@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.4.0...v1.5.0) (2026-07-10)
+
+
+### Features
+
+* FdcLocaleSwitcher en dropdown à drapeaux (flag-icons) ([#19](https://github.com/Meridian-Synergy/fdc-ui/issues/19)) ([4cf2adc](https://github.com/Meridian-Synergy/fdc-ui/commit/4cf2adcfd26a50deae9ee56a1a964cb948becd35))
+
 ## [1.4.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.3.0...v1.4.0) (2026-07-09)
 
 
