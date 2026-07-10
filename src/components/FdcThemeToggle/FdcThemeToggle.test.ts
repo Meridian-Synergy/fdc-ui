@@ -30,11 +30,22 @@ describe('FdcTextSizeToggle', () => {
 })
 
 describe('FdcLocaleSwitcher', () => {
-  it('émet la nouvelle locale', async () => {
+  it('émet la nouvelle locale au clic sur une option', async () => {
     const wrapper = mount(FdcLocaleSwitcher, {
-      props: { modelValue: 'fr', locales: [{ code: 'fr', name: 'Français' }, { code: 'en', name: 'English' }] },
+      props: {
+        modelValue: 'fr',
+        locales: [
+          { code: 'fr', name: 'Français', flag: 'fr' },
+          { code: 'en', name: 'English', flag: 'gb' },
+        ],
+      },
     })
-    await wrapper.find('select').setValue('en')
+    // Fermé au départ : pas de listbox.
+    expect(wrapper.find('[role="listbox"]').exists()).toBe(false)
+    // Ouvre le menu puis sélectionne « English ».
+    await wrapper.find('.fdc-locale__trigger').trigger('click')
+    const options = wrapper.findAll('[role="option"]')
+    await options[1].trigger('click')
     expect(wrapper.emitted('update:modelValue')?.[0]).toEqual(['en'])
   })
 })
