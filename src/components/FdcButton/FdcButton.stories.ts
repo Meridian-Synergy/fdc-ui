@@ -7,7 +7,7 @@ const meta: Meta<typeof FdcButton> = {
   args: { variant: 'primary', size: 'md', disabled: false, block: false },
   argTypes: {
     variant: { control: 'select', options: ['primary', 'outline', 'danger'] },
-    size: { control: 'select', options: ['md', 'sm'] },
+    size: { control: 'select', options: ['lg', 'md', 'sm'] },
   },
 }
 export default meta

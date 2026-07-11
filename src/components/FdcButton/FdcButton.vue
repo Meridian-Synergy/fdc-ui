@@ -5,7 +5,7 @@
 withDefaults(
   defineProps<{
     variant?: 'primary' | 'outline' | 'danger'
-    size?: 'md' | 'sm'
+    size?: 'lg' | 'md' | 'sm'
     type?: 'button' | 'submit'
     disabled?: boolean
     block?: boolean
@@ -38,6 +38,10 @@ withDefaults(
   border: 1px solid transparent;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.fdc-button--lg {
+  padding: var(--fdc-space-3, 0.75rem) var(--fdc-space-5, 1.5rem);
+  font-size: 1.1rem;
 }
 .fdc-button--md {
   padding: var(--fdc-space-2, 0.5rem) var(--fdc-space-4, 1rem);
