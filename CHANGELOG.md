@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.5.0...v1.6.0) (2026-07-11)
+
+
+### Features
+
+* **FdcInput:** prop revealable (bouton œil afficher/masquer mot de passe) ([#22](https://github.com/Meridian-Synergy/fdc-ui/issues/22)) ([cffc516](https://github.com/Meridian-Synergy/fdc-ui/commit/cffc516273a435ba3ea37cdd50b8acc69c8d915c))
+
 ## [1.5.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.4.0...v1.5.0) (2026-07-10)
 
 
