@@ -8,7 +8,7 @@ describe('FdcLogo', () => {
     const svg = wrapper.find('svg')
     expect(svg.exists()).toBe(true)
     expect(svg.attributes('role')).toBe('img')
-    expect(svg.attributes('aria-label')).toBe('FDC 360')
+    expect(svg.attributes('aria-label')).toBe('CDF 360')
     expect(svg.attributes('viewBox') ?? svg.attributes('viewbox')).toBeTruthy()
     expect(svg.findAll('path').length).toBeGreaterThan(0)
   })
