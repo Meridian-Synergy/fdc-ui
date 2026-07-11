@@ -12,6 +12,13 @@ describe('FdcInput', () => {
   it('marque aria-invalid quand invalid', () => {
     const wrapper = mount(FdcInput, { props: { invalid: true } })
     expect(wrapper.find('input').attributes('aria-invalid')).toBe('true')
-    expect(wrapper.classes()).toContain('fdc-input--invalid')
+    expect(wrapper.find('input').classes()).toContain('fdc-input--invalid')
+  })
+
+  it('révèle le mot de passe au clic sur le bouton œil', async () => {
+    const wrapper = mount(FdcInput, { props: { type: 'password', revealable: true } })
+    expect(wrapper.find('input').attributes('type')).toBe('password')
+    await wrapper.find('button.fdc-input__reveal').trigger('click')
+    expect(wrapper.find('input').attributes('type')).toBe('text')
   })
 })
