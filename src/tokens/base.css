@@ -3,8 +3,12 @@
    NB : chaque composant fournit ses propres fallbacks var(--token, valeur). */
 
 :root {
-  /* Typographie */
-  --fdc-font-sans: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  /* Typographie — Barlow (titres + corps), Barlow Condensed (labels/meta),
+     Space Mono (données/nombres). Les woff2 sont fournis par l'app (public/fonts +
+     assets/css/fonts.css) ; fallback system-ui si non chargés. */
+  --fdc-font-sans: 'Barlow', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --fdc-font-condensed: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+  --fdc-font-data: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
   /* Rayons */
   --fdc-radius-sm: 4px;
