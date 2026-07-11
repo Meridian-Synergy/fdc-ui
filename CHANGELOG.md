@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.6.0...v1.7.0) (2026-07-11)
+
+
+### Features
+
+* **FdcButton:** ajoute la taille lg ([#26](https://github.com/Meridian-Synergy/fdc-ui/issues/26)) ([60eb2d0](https://github.com/Meridian-Synergy/fdc-ui/commit/60eb2d0b75e8529bf04c3453307cb4df24b40374))
+
+
+### Bug Fixes
+
+* GOV.UK reveal a11y pattern + native attr forwarding on FdcInput ([#24](https://github.com/Meridian-Synergy/fdc-ui/issues/24)) ([602f684](https://github.com/Meridian-Synergy/fdc-ui/commit/602f6843fba7039534755a36f145c08e6c20b0f8))
+
 ## [1.6.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.5.0...v1.6.0) (2026-07-11)
 
 
