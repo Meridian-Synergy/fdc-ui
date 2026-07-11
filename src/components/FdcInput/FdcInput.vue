@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 
 // Champ de saisie contrôlé (v-model). S'utilise seul ou dans FdcField.
-// `revealable` ajoute un bouton œil afficher/masquer (mots de passe).
+// Un champ `type="password"` reçoit automatiquement un bouton œil afficher/masquer
+// (opt-out via `:revealable="false"`), suivant le pattern d'accessibilité GOV.UK.
 const props = withDefaults(
   defineProps<{
     modelValue?: string
@@ -15,28 +16,57 @@ const props = withDefaults(
     revealable?: boolean
     revealLabel?: string
     hideLabel?: string
+    shownAnnouncement?: string
+    hiddenAnnouncement?: string
   }>(),
   {
     modelValue: '',
     type: 'text',
     disabled: false,
     invalid: false,
-    revealable: false,
+    revealable: true,
     revealLabel: 'Show password',
     hideLabel: 'Hide password',
+    shownAnnouncement: 'Your password is visible',
+    hiddenAnnouncement: 'Your password is hidden',
   },
 )
 defineEmits<{ 'update:modelValue': [value: string] }>()
 
+// Transmet les attributs natifs (required, minlength, name…) à l'<input>,
+// pas au <div> racine où ils seraient sans effet.
+defineOptions({ inheritAttrs: false })
+
+const inputEl = ref<HTMLInputElement>()
 const revealed = ref(false)
+const announcement = ref('')
+
+const showReveal = computed(() => props.type === 'password' && props.revealable && !props.disabled)
 // Type effectif : révélé → 'text', sinon le type demandé (souvent 'password').
-const effectiveType = computed(() => (props.revealable && revealed.value ? 'text' : props.type))
+const effectiveType = computed(() => (props.type === 'password' && revealed.value ? 'text' : props.type))
+
+function toggleReveal() {
+  revealed.value = !revealed.value
+  announcement.value = revealed.value ? props.shownAnnouncement : props.hiddenAnnouncement
+}
+
+// Re-masque à la soumission pour ne jamais laisser un mot de passe révélé à l'écran
+// (l'événement submit se déclenche même avec @submit.prevent).
+function remask() { revealed.value = false }
+let formEl: HTMLFormElement | null = null
+onMounted(() => {
+  formEl = inputEl.value?.form ?? null
+  formEl?.addEventListener('submit', remask)
+})
+onBeforeUnmount(() => formEl?.removeEventListener('submit', remask))
 </script>
 
 <template>
-  <div :class="['fdc-input-wrap', { 'fdc-input-wrap--revealable': revealable }]">
+  <div :class="['fdc-input-wrap', { 'fdc-input-wrap--revealable': showReveal }]">
     <input
       :id="id"
+      ref="inputEl"
+      v-bind="$attrs"
       class="fdc-input"
       :class="{ 'fdc-input--invalid': invalid }"
       :type="effectiveType"
@@ -48,13 +78,13 @@ const effectiveType = computed(() => (props.revealable && revealed.value ? 'text
       @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
     />
     <button
-      v-if="revealable"
+      v-if="showReveal"
       type="button"
       class="fdc-input__reveal"
       :aria-label="revealed ? hideLabel : revealLabel"
-      :aria-pressed="revealed"
+      :title="revealed ? hideLabel : revealLabel"
       :disabled="disabled"
-      @click="revealed = !revealed"
+      @click="toggleReveal"
     >
       <svg v-if="revealed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
@@ -65,6 +95,7 @@ const effectiveType = computed(() => (props.revealable && revealed.value ? 'text
         <circle cx="12" cy="12" r="3" />
       </svg>
     </button>
+    <span class="fdc-sr-only" role="status" aria-live="polite">{{ announcement }}</span>
   </div>
 </template>
 
@@ -87,6 +118,9 @@ const effectiveType = computed(() => (props.revealable && revealed.value ? 'text
 .fdc-input-wrap--revealable .fdc-input {
   padding-right: 2.75rem;
 }
+/* Supprime le bouton reveal natif du navigateur (Edge/IE) pour éviter un double œil. */
+.fdc-input::-ms-reveal,
+.fdc-input::-ms-clear { display: none; }
 .fdc-input:focus {
   outline: none;
   border-color: var(--fdc-color-primary, #66a361);
@@ -105,14 +139,13 @@ const effectiveType = computed(() => (props.revealable && revealed.value ? 'text
 }
 .fdc-input__reveal {
   position: absolute;
-  top: 50%;
-  right: 0.4rem;
-  transform: translateY(-50%);
+  top: 2px;
+  bottom: 2px;
+  right: 0.35rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.4rem;
   padding: 0;
   border: none;
   background: transparent;
@@ -130,5 +163,16 @@ const effectiveType = computed(() => (props.revealable && revealed.value ? 'text
 .fdc-input__reveal:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+.fdc-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

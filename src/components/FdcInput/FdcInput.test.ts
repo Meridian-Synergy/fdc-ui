@@ -15,10 +15,26 @@ describe('FdcInput', () => {
     expect(wrapper.find('input').classes()).toContain('fdc-input--invalid')
   })
 
-  it('révèle le mot de passe au clic sur le bouton œil', async () => {
-    const wrapper = mount(FdcInput, { props: { type: 'password', revealable: true } })
+  it('révèle le mot de passe au clic sur le bouton œil (auto sur type=password)', async () => {
+    // Pas de prop `revealable` : l'œil apparaît automatiquement sur un champ password.
+    const wrapper = mount(FdcInput, { props: { type: 'password' } })
+    const btn = wrapper.find('button.fdc-input__reveal')
+    expect(btn.exists()).toBe(true)
     expect(wrapper.find('input').attributes('type')).toBe('password')
-    await wrapper.find('button.fdc-input__reveal').trigger('click')
+    await btn.trigger('click')
     expect(wrapper.find('input').attributes('type')).toBe('text')
+  })
+
+  it('suit le pattern GOV.UK : pas d’aria-pressed, annonce live', async () => {
+    const wrapper = mount(FdcInput, { props: { type: 'password' } })
+    const btn = wrapper.find('button.fdc-input__reveal')
+    expect(btn.attributes('aria-pressed')).toBeUndefined()
+    await btn.trigger('click')
+    expect(wrapper.find('[role="status"]').text().length).toBeGreaterThan(0)
+  })
+
+  it('transmet les attributs natifs (required) à l’input', () => {
+    const wrapper = mount(FdcInput, { attrs: { required: true } })
+    expect(wrapper.find('input').attributes('required')).toBeDefined()
   })
 })
