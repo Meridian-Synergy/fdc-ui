@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.7.0...v1.8.0) (2026-07-14)
+
+
+### Features
+
+* **ds:** FdcStatCard + tokens Barlow/Condensed/Space Mono ([#27](https://github.com/Meridian-Synergy/fdc-ui/issues/27)) ([e9567f4](https://github.com/Meridian-Synergy/fdc-ui/commit/e9567f44ad8f1b9b72e40347f290a557476862b7))
+
+
+### Bug Fixes
+
+* **locale-switcher:** défauts défensifs sur locales/modelValue ([#29](https://github.com/Meridian-Synergy/fdc-ui/issues/29)) ([897842c](https://github.com/Meridian-Synergy/fdc-ui/commit/897842c99afd09bda3f4f3898c269c183e0189cc))
+
 ## [1.7.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.6.0...v1.7.0) (2026-07-11)
 
 
