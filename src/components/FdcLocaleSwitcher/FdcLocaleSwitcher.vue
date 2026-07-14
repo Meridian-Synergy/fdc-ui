@@ -16,11 +16,20 @@ export interface FdcLocaleOption {
   flag: string
 }
 
-const props = defineProps<{
-  modelValue: string
-  locales: FdcLocaleOption[]
-  label?: string
-}>()
+// Défauts défensifs (même posture que les tokens `var(--token, fallback)`) : une
+// prop oubliée par le consommateur doit rendre un état VIDE, jamais crasher au
+// rendu. `locales` non fourni → `[].find(...)` = undefined, pas d'exception.
+const props = withDefaults(
+  defineProps<{
+    modelValue?: string
+    locales?: FdcLocaleOption[]
+    label?: string
+  }>(),
+  {
+    modelValue: '',
+    locales: () => [],
+  },
+)
 const emit = defineEmits<{ 'update:modelValue': [string] }>()
 
 const open = ref(false)
