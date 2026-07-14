@@ -1,6 +1,6 @@
 {
   "name": "fdc-ui",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "FDC — design system (Vue 3 + Storybook)",
   "type": "module",
   "main": "src/index.ts",
