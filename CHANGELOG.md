@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.8.0...v1.9.0) (2026-07-18)
+
+
+### Features
+
+* **FdcSpinner:** port dot-ring spinner en couleurs FDC (theme-safe) ([#30](https://github.com/Meridian-Synergy/fdc-ui/issues/30)) ([cbc4848](https://github.com/Meridian-Synergy/fdc-ui/commit/cbc4848703d0d53118efc84876416df3ef606389))
+
 ## [1.8.0](https://github.com/Meridian-Synergy/fdc-ui/compare/v1.7.0...v1.8.0) (2026-07-14)
 
 
